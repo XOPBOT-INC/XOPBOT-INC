@@ -8,7 +8,6 @@ app.use(express.static("main"));
 app.use(express.static("source"));
 app.use(express.static("assets"));
 app.use(express.static("service"));
-app.get("*", function(req, res){res.sendFile(__dirname + "/main/404");});
 app.get("/", function(request, response){response.sendFile(__dirname + "/index.html");});
 app.get("*", function(req, res){res.sendFile(__dirname + "/source/xopbot/redirect/404/");});
 app.use((req, res, next) => {if (!req.secure) return res.redirect('https://' + req.get('host') + req.url);next();});
